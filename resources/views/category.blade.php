@@ -13,6 +13,7 @@
 
     <div class="container my-5 text-center">
         <div class="row g-4 justify-content-center">
+            <h2>CATEGORIES</h2>
             @foreach ($categories as $category)
                 <div class="col-md-3 col-sm-6">
                     <div class="card shadow-sm border-0 rounded-4 h-100">
@@ -27,7 +28,8 @@
                     </div>
                 </div>
             @endforeach
-
+            
+            <H2>PRODUCTS</H2>
           @forelse ($products as $product)
             <div class="col-md-3 col-sm-6">
                 <div class="card border-0 shadow h-100">
