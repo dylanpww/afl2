@@ -27,6 +27,9 @@ class ProductFactory extends Factory
             'stock' => $this->faker->numberBetween(1,500),
             'image' =>$this->faker->imageUrl(640, 480, 'products', true)
 
+
+            
+
         ];
     }
 }
