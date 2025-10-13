@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <h3 class="fw-bold text-primary mb-3 text-center">Produk dalam Kategori Ini</h3>
+    <h3 class="fw-bold text-black mb-3 text-center">Produk dalam Kategori Ini</h3>
     <div class="row g-4 justify-content-center">
         @forelse ($products as $product)
             <div class="col-md-3 col-sm-6">

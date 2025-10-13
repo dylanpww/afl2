@@ -1,16 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-dark shadow-sm"
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm "
     style="background: linear-gradient(90deg, #36454F, #A9A9A9);">
     <div class="container py-2">
         <a class="navbar-brand fw-bold text-white fs-4" href="/">
             SADYL
         </a>
-
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        {{-- buat resposive hp --}}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto text-white fw-semibold position-relative">
                 <li class="nav-item mx-2">
                     <a class="nav-link {{ Request :: is('/') ? 'active' : '' }}" href="/">

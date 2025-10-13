@@ -2,9 +2,9 @@
     <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 mb-4">
-                <h4 class="fw-bold">SQ FOAM</h4>
+                <h4 class="fw-bold">SADYL</h4>
                 <p>
-                    Kami menyediakan peralatan tidur terbaik bagi anda, jangan lupa beli disini.
+                    Kami menyediakan peralatan tidur terbaik bagi anda, jangan sia siakan waktu dan segera investasikan untuk masa depan anda.
                 </p>
             </div>
             <div class="col-md-4 mb-4">
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="text-center small text-light mt-3">
-            © 2025 SQ FOAM. All rights reserved.
+            © 2025 SADYL. All rights reserved.
         </div>
     </div>
 </footer>
