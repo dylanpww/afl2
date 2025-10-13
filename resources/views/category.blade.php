@@ -27,6 +27,20 @@
                     </div>
                 </div>
             @endforeach
+
+          @forelse ($products as $product)
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow h-100">
+                    <img src="{{ $product->image }}" class="card-img-top" alt="" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5>{{ $product->nama }}</h5>
+                        <p class="text-muted">Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
+                    </div>
+                </div>
+            </div>
+        @empty
+            <p class="text-center text-muted">Belum ada produk</p>
+        @endforelse 
         </div>
     </div>
 

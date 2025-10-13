@@ -16,7 +16,7 @@
                 <div class="card border-0 shadow h-100">
                     <img src="{{ $product->image }}" class="card-img-top" alt="foto dari factory" style="height: 200px; object-fit: cover;">
                     <div class="card-body text-center">
-                        <h5 class="fw-bold">{{ $product->name }}</h5>
+                        <h5 class="fw-bold">{{ $product->nama }}</h5>
                         <p class="text-muted">Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
                     </div>
                 </div>

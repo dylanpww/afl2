@@ -11,6 +11,6 @@ Route::get('/aboutUs', function () {
     return view('aboutUs');
 });
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category', [ProductController::class, 'index'])->name('category.index');
 
 Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
