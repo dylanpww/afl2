@@ -22,6 +22,6 @@ class RatingSeeder extends Seeder
             'comment' => 'kualitas biasa saja'
         ]);
 
-        Rating::factory()->count(150)->create();
+        Rating::factory()->count(10)->create();
     }
 }

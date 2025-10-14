@@ -18,6 +18,9 @@
                     <div class="card-body text-center">
                         <h5 class="fw-bold">{{ $product->nama }}</h5>
                         <p class="text-muted">Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
+                        <a href="{{ route('product.show', $category->id) }}" class="btn btn-category text-white mt-2">
+                                Detail
+                            </a>
                     </div>
                 </div>
             </div>
@@ -30,4 +33,16 @@
         <a href="{{ route('category.index') }}" class="btn btn-secondary">Kembali</a>
     </div>
 </div>
+
+<style>
+        .btn-category {
+            background-color: #A9A9A9;
+            color: white;
+            border: none;
+        }
+
+        .btn-category:hover {
+            background-color: #36454F;
+        }
+    </style>
 @endsection

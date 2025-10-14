@@ -24,7 +24,23 @@
                 </p>
             </div>
         </section>
-
-
-    </div>
+        <section class="text-center">
+        <h2 class="fw-bold mb-4 text-black">Review Pelanggan</h2>
+        <div class="d-flex flex-wrap justify-content-center gap-4">
+            @forelse ($ratings as $rating)
+                <div class="card border-0 shadow rounded-4 p-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <div class="mb-2">
+                            @for ($i = 0; $i < $rating->star; $i++)
+                                ⭐
+                            @endfor
+                        </div>
+                        <p class="text-muted mb-0">{{ $rating->comment }}</p>
+                    </div>
+                </div>
+            @empty
+                <p class="text-muted">Belum ada ulasan pelanggan.</p>
+            @endforelse
+        </div>
+    </section>
 @endsection
