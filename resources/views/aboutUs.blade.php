@@ -11,7 +11,7 @@
         </section>
         <section class="row align-items-center mb-5">
             <div class="col-md-6 mb-4 mb-md-0">
-                <img src="https://tracon.co.id/wp-content/uploads/2024/06/Pabrik.png" alt=""
+                <img src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""
                     class="img-fluid rounded-4 shadow">
             </div>
             <div class="col-md-6 ps-md-4">

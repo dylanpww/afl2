@@ -8,9 +8,14 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
+        
+        if ($request->has('search')) {
+            $products = Product::where('nama', 'like', '%' . $request->search . '%')->paginate(5);
+        } else {
+            $products = Product::paginate(8);
+        }
         $categories = Category::all();
         return view('category', compact ('products', 'categories'));
     }

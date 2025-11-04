@@ -31,6 +31,16 @@
             @endforeach
 
             <H2>PRODUCTS</H2>
+            <div class="col-12 d-flex justify-content-center my-4">
+                <form action="/category" method="GET" class="d-flex w-50 gap-2">
+                    <input type="search" class="form-control" name="search" placeholder="Search...">
+                    <button type="submit" class="btn btn-outline-success">Search</button>
+                </form>
+            </div>
+
+
+
+
             @forelse ($products as $product)
                 <div class="col-md-3 col-sm-6">
                     <div class="card border-0 shadow h-100">
@@ -44,6 +54,11 @@
             @empty
                 <p class="text-center text-muted">Belum ada produk</p>
             @endforelse
+
+            <div>
+                {{ $products->links() }}
+            </div>
+
         </div>
     </div>
 
