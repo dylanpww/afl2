@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string("nama");
             $table->integer("harga");
             $table->text("deskripsi");
-            $table->integer("rating");
             $table->integer("stock");
             $table->unsignedBigInteger(column: 'category_id');
             $table-> string('image');

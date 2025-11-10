@@ -15,6 +15,12 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        $user = $request->user();
+
+        if ($user->status == 'admin') {
+            return $next($request);
+        }
+
+        return redirect('/');
     }
 }

@@ -12,19 +12,38 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto text-white fw-semibold position-relative">
                 <li class="nav-item mx-2">
-                    <a class="nav-link {{ Request :: is('/') ? 'active' : '' }}" href="/">
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">
                         Home
                     </a>
                 </li>
                 <li class="nav-item mx-2 ">
-                    <a class="nav-link {{ Request :: is('category') ? 'active' : '' }}" href="/category">
+                    <a class="nav-link {{ Request::is('category') ? 'active' : '' }}" href="/category">
                         Product
                     </a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link {{ Request :: is('aboutUs') ? 'active' : '' }}" href="/aboutUs">
+                    <a class="nav-link {{ Request::is('aboutUs') ? 'active' : '' }}" href="/aboutUs">
                         About Us
                     </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link {{ Request::is('aboutUs') ? 'active' : '' }}" href="/cart">
+                        View Cart
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    @auth
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="btn">Log Out</button>
+                        </form>
+                    @endauth
+                    @guest
+                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">
+                            Login
+                        </a>
+                    @endguest
+
                 </li>
             </ul>
         </div>

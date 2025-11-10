@@ -39,6 +39,14 @@
             </div>
 
 
+            <h3>
+                @auth
+                    @if (Auth::user()->status === 'admin')
+                        <a href="/addAndEditProduct">add/edit product</a>
+                    @endif
+                @endauth
+
+            </h3>
 
 
             @forelse ($products as $product)

@@ -10,10 +10,17 @@ class Product extends Model
 
     use HasFactory;
 
-    protected $fillable = ['nama', 'harga', 'deskripsi', 'rating', 'stock', 'foto'];
+    protected $fillable = ['nama', 'harga', 'deskripsi', 'stock', 'foto'];
 
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function carts()
+    {
+        return $this->belongsToMany(Cart::class, 'cart_product')
+                    ->withPivot('quantity')
+                    ->withTimestamps();
     }
 }
