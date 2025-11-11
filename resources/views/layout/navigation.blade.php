@@ -4,7 +4,6 @@
         <a class="navbar-brand fw-bold text-white fs-4" href="/">
             SADYL
         </a>
-        {{-- buat resposive hp --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,11 +25,22 @@
                         About Us
                     </a>
                 </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link {{ Request::is('aboutUs') ? 'active' : '' }}" href="/cart">
+                {{-- <li class="nav-item mx-2">
+                    <a class="nav-link {{ Request::is('cart') ? 'active' : '' }}" href="/cart">
                         View Cart
                     </a>
+                </li> --}}
+
+                <li class="nav-item mx-2">
+                    @auth
+                        @if (Auth::user()->status === 'admin')
+                            <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" href="/admin">Admin</a>
+                        @endif
+                    @endauth
                 </li>
+
+
+
                 <li class="nav-item mx-2">
                     @auth
                         <form method="POST" action="{{ route('logout') }}">

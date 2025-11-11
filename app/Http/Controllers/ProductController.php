@@ -38,29 +38,29 @@ class ProductController extends Controller
 
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'harga' => 'required|numeric|min:0',
+            'harga' => 'required|numeric',
             'deskripsi' => 'nullable|string',
-            'image' => 'nullable',
+            'category_id' => 'required|exists:categories,id',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('products', 'public');
-            $validated['image'] = '/storage/' . $imagePath;
+            $path = $request->file('image')->store('products', 'public');
+            $validated['image'] = '/storage/' . $path;
         } else {
             $validated['image'] = $product->image;
         }
 
         $product->update($validated);
 
-        return redirect('/addAndEditProduct')
-            ->with('success', 'Product updated successfully!');
+        return redirect()->route('product.showAllProduct');
     }
 
 
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        return view('editProduct', compact('product'));
+        $categories = Category::all();
+        return view('editProduct', compact('product', 'categories'));
     }
 
     public function destroy($id)
@@ -68,8 +68,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
 
-        return redirect()->route('product.showAllProduct')
-            ->with('success', 'Product deleted successfully!');
+        return redirect()->route('product.showAllProduct');
     }
 
     public function create()
@@ -85,15 +84,19 @@ class ProductController extends Controller
             'harga' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
             'deskripsi' => 'nullable|string',
-            'category_id' => 'required|exists:categories,id',
+            'category_id' => 'nullable|exists:categories,id',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         $path = $request->file('image')->store('products', 'public');
         $validated['image'] = '/storage/' . $path;
 
+        if (empty($validated['category_id'])) {
+            $defaultCategory = Category::firstOrCreate(['nama' => 'Default']);
+            $validated['category_id'] = $defaultCategory->id;
+        }
         Product::create($validated);
 
-        return redirect('addAndEditProduct')->with('success', 'Product added successfully!');
+        return redirect('addAndEditProduct');
     }
 }

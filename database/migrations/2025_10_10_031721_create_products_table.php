@@ -17,10 +17,11 @@ return new class extends Migration
             $table->integer("harga");
             $table->text("deskripsi");
             $table->integer("stock");
-            $table->unsignedBigInteger(column: 'category_id');
-            $table-> string('image');
-            $table->timestamps();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->string('image');
+            $table->timestamps();
+            
         });
     }
 

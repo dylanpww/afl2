@@ -40,7 +40,7 @@
         </section>
         <section class="row align-items-center bg-white shadow-sm rounded-4 p-4">
             <div class="col-md-6 mb-4 mb-md-0">
-                <img src="https://picsum.photos/600/400" alt="about us" class="img-fluid rounded shadow">
+                <img src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="about us" class="img-fluid rounded shadow">
             </div>
             <div class="col-md-6 ps-md-4">
                 <h2 class="fw-bold mb-3 text-black">Tentang Kami</h2>

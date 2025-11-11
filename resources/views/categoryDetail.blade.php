@@ -18,7 +18,7 @@
                     <div class="card-body text-center">
                         <h5 class="fw-bold">{{ $product->nama }}</h5>
                         <p class="text-muted">Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
-                        <a href="{{ route('product.show', $category->id) }}" class="btn btn-category text-white mt-2">
+                        <a href="{{ route('product.show', $product->id) }}" class="btn btn-category text-white mt-2">
                                 Detail
                             </a>
                     </div>

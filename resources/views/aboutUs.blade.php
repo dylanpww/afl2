@@ -26,6 +26,7 @@
         </section>
         <section class="text-center">
         <h2 class="fw-bold mb-4 text-black">Review Pelanggan</h2>
+        <a href="{{ route('rating.create') }}" class="btn btn-primary mb-4">Add Review</a>
         <div class="d-flex flex-wrap justify-content-center gap-4">
             @forelse ($ratings as $rating)
                 <div class="card border-0 shadow rounded-4 p-3" style="width: 18rem;">

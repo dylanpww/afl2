@@ -13,11 +13,14 @@
 
     <div class="container my-5 text-center">
         <div class="row g-4 justify-content-center">
+
+            
+
             <h2>CATEGORIES</h2>
             @foreach ($categories as $category)
                 <div class="col-md-3 col-sm-6">
                     <div class="card shadow-sm border-0 rounded-4 h-100">
-                        <img src="{{$category->image}}" class="card-img-top rounded-top-4" alt=""
+                        <img src="{{asset($category->image)}}" class="card-img-top rounded-top-4" alt=""
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-black">{{ Str::of($category->nama)->replace('_', ' ')->title() }}
@@ -39,14 +42,7 @@
             </div>
 
 
-            <h3>
-                @auth
-                    @if (Auth::user()->status === 'admin')
-                        <a href="/addAndEditProduct">add/edit product</a>
-                    @endif
-                @endauth
-
-            </h3>
+            
 
 
             @forelse ($products as $product)
@@ -56,7 +52,11 @@
                         <div class="card-body text-center">
                             <h5>{{ $product->nama }}</h5>
                             <p class="text-muted">Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
+                            <a href="{{ route('product.show', $product->id) }}" class="btn btn-category text-white">
+                            Detail
+                        </a>
                         </div>
+                        
                     </div>
                 </div>
             @empty
